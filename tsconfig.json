@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "target": "es5",                    // Ensures compatibility with older browsers
+      "lib": ["dom", "dom.iterable", "esnext"],  // Ensures modern JavaScript features and browser APIs
+      "allowJs": true,                    // Allows JavaScript files to be compiled
+      "skipLibCheck": true,               // Skips type checking of declaration files
+      "esModuleInterop": true,            // Enables import/export compatibility
+      "allowSyntheticDefaultImports": true, 
+      "strict": true,                     // Enables strict type-checking options
+      "forceConsistentCasingInFileNames": true,
+      "module": "esnext",                 // Use ES module system
+      "moduleResolution": "node",         // Resolves modules like Node.js does
+      "resolveJsonModule": true,          // Allows importing of JSON files
+      "jsx": "react-jsx",                 // Ensures correct JSX support for React 17 and higher
+      "types": ["node", "react", "react-dom"], // Includes type definitions for React and Node.js
+      "baseUrl": "./src",                 // Sets base path for resolving modules
+      "paths": {
+        "@/*": ["src/*"]                  // Allows importing from `src` folder using `@` alias
+      }
+    },
+    "include": [
+      "src"  // The `src` folder contains all the TypeScript and JSX files
+    ]
+  }
