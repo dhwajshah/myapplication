@@ -1,0 +1,7 @@
+.homePage {
+    @apply flex flex-col items-center justify-center min-h-screen bg-blue-100;
+  }
+  
+  .heading {
+    @apply text-4xl font-bold text-blue-600;
+  }
