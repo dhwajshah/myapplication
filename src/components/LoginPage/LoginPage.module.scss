@@ -1,0 +1,79 @@
+.container {
+  @apply flex min-h-screen;
+}
+
+.leftSection {
+  @apply flex-1 flex items-center justify-center bg-gray-100;
+}
+
+.loginBox {
+  @apply w-4/5 max-w-md text-left;
+}
+
+.googleLogo {
+  @apply w-10 h-10 mb-4; /* Adjust the size and spacing */
+}
+
+.title {
+  @apply text-2xl font-bold mb-2.5;
+}
+
+.description {
+  @apply text-sm mb-5;
+}
+
+.form {
+  @apply flex flex-col gap-2.5;
+}
+
+.label {
+  @apply text-sm font-medium mb-1;
+}
+
+.passwordWrapper {
+  @apply flex justify-between items-center mb-1;
+}
+
+.forgotPassword {
+  @apply text-sm text-indigo-500 no-underline;
+}
+
+.input {
+  @apply p-2.5 text-sm border border-gray-300 rounded-md;
+}
+
+.options {
+  @apply flex justify-between items-center mb-5;
+}
+
+.rememberMe {
+  @apply text-sm font-bold ml-2;
+}
+
+.loginButton {
+  @apply bg-indigo-500 text-white p-2.5 text-base font-bold border-none rounded-md cursor-pointer;
+}
+
+.registerText {
+  @apply text-sm text-center mt-5;
+}
+
+.registerLink {
+  @apply text-indigo-500 no-underline;
+}
+
+.rightSection {
+  @apply flex-1 flex flex-col justify-center items-start bg-gradient-to-b from-indigo-800 to-indigo-900 text-white px-16;
+}
+
+.logoImage {
+  @apply w-full max-w-full mb-6 object-contain ml-1;
+}
+
+.infoText {
+  @apply text-3xl font-light leading-relaxed mb-4 text-left self-start ml-16;
+}
+
+.siteName {
+  @apply text-sm font-light text-left ml-16;
+}
