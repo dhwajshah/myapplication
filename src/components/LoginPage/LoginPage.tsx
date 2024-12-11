@@ -1,9 +1,23 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import styles from './LoginPage.module.scss';
-import combinedLogos from '../../assets/combined_logos.png';
-import googleLogo from '../../assets/google-logo.png'; // Import the Google logo image
+import { useForm, SubmitHandler } from "react-hook-form";
+import styles from "./LoginPage.module.scss";
+import combinedLogos from "../../assets/combined_logos.png";
+import googleLogo from "../../assets/google-logo.png"; 
+
+interface LoginFormInputs {
+  email: string;
+  password: string;
+  rememberMe?: boolean; // Optional field
+}
 
 const LoginPage = () => {
+  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormInputs>();
+  
+  //onsubmit function
+  const onSubmit: SubmitHandler<LoginFormInputs> = (data) => {
+    alert(`Form Submitted: ${JSON.stringify(data)}`);
+  };
+
   return (
     <div className={styles.container}>
       {/* Left Section */}
@@ -11,13 +25,13 @@ const LoginPage = () => {
         <div className={styles.loginBox}>
           {/* Google Logo */}
           <img src={googleLogo} alt="Google Logo" className={styles.googleLogo} />
-          
+
           <h1 className={styles.title}>Masuk ke akun kamu</h1>
           <p className={styles.description}>
             Belajar gratis di Namanyajugabelajar.io, dan memulai karir yang kamu
             cita-citakan sejak dalam embrio!
           </p>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <label className={styles.label} htmlFor="email">
               Email
             </label>
@@ -26,9 +40,18 @@ const LoginPage = () => {
               type="email"
               id="email"
               placeholder="Email"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[^@ ]+@[^@ ]+\.[^@ ]+$/,
+                  message: "Invalid email address",
+                },
+              })}
             />
+            {errors.email?.message && (
+              <p className={styles.error}>{String(errors.email.message)}</p>
+            )}
 
-            {/* Kata Sandi Label and Forgot Password */}
             <div className={styles.passwordWrapper}>
               <label className={styles.label} htmlFor="password">
                 Kata Sandi
@@ -37,16 +60,26 @@ const LoginPage = () => {
                 Lupa Kata Sandi?
               </a>
             </div>
-
             <input
               className={styles.input}
               type="password"
               id="password"
               placeholder="Kata Sandi"
+              {...register("password", {
+                required: "Password is required",
+                minLength: {
+                  value: 6,
+                  message: "Password must be at least 6 characters",
+                },
+              })}
             />
+            {errors.password?.message && (
+              <p className={styles.error}>{String(errors.password.message)}</p>
+            )}
+
             <div className={styles.options}>
               <label>
-                <input type="checkbox" />
+                <input type="checkbox" {...register("rememberMe")} />
                 <span className={styles.rememberMe}>Ingat saya</span>
               </label>
             </div>
