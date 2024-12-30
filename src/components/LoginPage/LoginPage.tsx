@@ -1,20 +1,19 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { useForm, SubmitHandler } from "react-hook-form";
-import styles from "./LoginPage.module.scss";
-import combinedLogos from "../../assets/combined_logos.png";
-import googleLogo from "../../assets/google-logo.png"; 
+import { useForm, SubmitHandler } from 'react-hook-form';
+import styles from './LoginPage.module.scss';
+import combinedLogos from '../../assets/combined_logos.png';
+import googleLogo from '../../assets/google-logo.png';
 
 interface LoginFormInputs {
-  email: string;
-  password: string;
-  rememberMe?: boolean; // Optional field
+  email : string;
+  password : string;
+  rememberMe? : boolean;
 }
 
 const LoginPage = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormInputs>();
-  
-  //onsubmit function
-  const onSubmit: SubmitHandler<LoginFormInputs> = (data) => {
+  const { register, handleSubmit, formState : { errors } } = useForm<LoginFormInputs>();
+
+  //onsubmit function 
+  const onSubmit : SubmitHandler<LoginFormInputs> = (data) => {
     alert(`Form Submitted: ${JSON.stringify(data)}`);
   };
 
@@ -23,12 +22,11 @@ const LoginPage = () => {
       {/* Left Section */}
       <div className={styles.leftSection}>
         <div className={styles.loginBox}>
-          {/* Google Logo */}
-          <img src={googleLogo} alt="Google Logo" className={styles.googleLogo} />
-
+          {/* Google Icon */}
+          <img src={googleLogo} alt="Google Logo" className={styles.googleIcon} />
           <h1 className={styles.title}>Masuk ke akun kamu</h1>
           <p className={styles.description}>
-            Belajar gratis di Namanyajugabelajar.io, dan memulai karir yang kamu
+            Belajir gratis di Namanyajugabelajar.io, dan memulai karir yang kamu
             cita-citakan sejak dalam embrio!
           </p>
           <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
@@ -51,7 +49,7 @@ const LoginPage = () => {
             {errors.email?.message && (
               <p className={styles.error}>{String(errors.email.message)}</p>
             )}
-
+  
             <div className={styles.passwordWrapper}>
               <label className={styles.label} htmlFor="password">
                 Kata Sandi
@@ -84,7 +82,7 @@ const LoginPage = () => {
               </label>
             </div>
             <button type="submit" className={styles.loginButton}>
-              Masuk
+            Masuk
             </button>
           </form>
           <p className={styles.registerText}>
@@ -99,9 +97,9 @@ const LoginPage = () => {
       {/* Right Section */}
       <div className={styles.rightSection}>
         <img src={combinedLogos} alt="Logos" className={styles.logoImage} />
-        <h2 className={styles.siteName}>NAMANYAJUGABELAJAR.IO</h2>
+        <h2 className={styles.siteName}>NAMANYAJUGABELAJAR.Io</h2>
         <p className={styles.infoText}>
-          Belajar secara online semakin mudah –<br />
+          Belajar secara online semakih mudha -<br />
           tetep belajar walaupun pake kuota dari <br />
           Kemendikbud hehe~
         </p>

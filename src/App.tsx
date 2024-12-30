@@ -1,11 +1,11 @@
-import LoginPage from 'components/LoginPage/LoginPage';
+//import LoginPage from 'components/LoginPage/LoginPage';
+import RegisterPage from 'components/RegisterPage/RegisterPage';
 import React from 'react';
-// import HomePage from 'components/HomePage/HomePage';
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <LoginPage />
+      <RegisterPage />
     </div>
   );
 };

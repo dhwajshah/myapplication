@@ -10,43 +10,39 @@
   @apply w-4/5 max-w-md text-left;
 }
 
-.googleLogo {
-  @apply w-10 h-10 mb-4; /* Adjust the size and spacing */
+.googleLogo{
+  @apply w-10 h-10 mb-4;
 }
 
-.title {
+.title{
   @apply text-2xl font-bold mb-2.5;
 }
 
-.description {
+.description{
   @apply text-sm mb-5;
 }
 
-.form {
+.form{
   @apply flex flex-col gap-2.5;
 }
 
-.label {
+.label{
   @apply text-sm font-medium mb-1;
 }
 
-.passwordWrapper {
-  @apply flex justify-between items-center mb-1;
-}
-
-.forgotPassword {
+.forgotPassword{
   @apply text-sm text-indigo-500 no-underline;
 }
 
-.input {
+.input{
   @apply p-2.5 text-sm border border-gray-300 rounded-md;
 }
 
-.options {
+.options{
   @apply flex justify-between items-center mb-5;
 }
 
-.rememberMe {
+.rememberMe{
   @apply text-sm font-bold ml-2;
 }
 
@@ -58,7 +54,7 @@
   @apply text-sm text-center mt-5;
 }
 
-.registerLink {
+.registerLink{
   @apply text-indigo-500 no-underline;
 }
 
@@ -66,7 +62,7 @@
   @apply flex-1 flex flex-col justify-center items-start bg-gradient-to-b from-indigo-800 to-indigo-900 text-white px-16;
 }
 
-.logoImage {
+.logoImage{
   @apply w-full max-w-full mb-6 object-contain ml-1;
 }
 
